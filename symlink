@@ -1,0 +1,5 @@
+# !/usr/bin/bash
+
+cd "$(dirname "${BASH_SOURCE}")";
+
+rsync -r --exclude ".git" --exclude "README.md" --exclude "setup" --exclude "symlink" . ~

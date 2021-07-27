@@ -25,3 +25,8 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+# TeX Live stuff
+export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
+export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH
+export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH

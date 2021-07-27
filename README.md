@@ -1,10 +1,12 @@
 # Dennis Chen's Ubuntu Dotfiles
 
-These are my dotfiles I use to install Ubuntu. Dotfiles are organized into directories based on function.
+These are my dotfiles I use to setup Ubuntu.
 
 I am a beginner. I do not really know what I am doing. These are public in the hopes that they will be useful to other people, but word of warning: it is incredibly likely I screw up in a myriad of ways. Since my dotfiles are personal, there is absolutely no guarantee of stability.
 
 ## Install
+
+You will need git installed to do this.
 
 To install, clone the repository by running
 
@@ -14,11 +16,17 @@ then navigate inside the repository by running
 
 	cd dotfiles
 
-and then run
+If you are on a new setup (i.e. nothing is installed), run
 
-	install/master
+	./setup
 
-It is likely that you will need to restart for these changes to fully take effect.
+and otherwise, run
+
+	./symlink
+
+to symlink to your home directory.
+
+It is likely that you will need to relog for these changes to fully take effect.
 
 ## What's here?
 
