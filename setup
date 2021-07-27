@@ -13,7 +13,7 @@ chsh -s $(which zsh)
 
 # symlink
 chmod u+x ./symlink
-./symlink
+dotfiles/symlink
 
 # make scripts executable
 chmod u+x ./make-bin-executable
@@ -56,7 +56,12 @@ wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 tar -xzf install-tl-unx.tar.gz
 cd "install-tl-$(date +%Y%m%d)"
 ./install-tl
+cd
 
 ## Clone Dennis Chen repos
 
 ./bin/dtex clone
+
+## Get CTANzip
+cd bin
+git clone https://github.com/chennisden/ctanzip
