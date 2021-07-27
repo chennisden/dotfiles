@@ -1,0 +1,4 @@
+for file in bin/*
+do
+	chmod u+x "$file"
+done

@@ -18,10 +18,12 @@ then navigate inside the repository by running
 
 If you are on a new setup (i.e. nothing is installed), run
 
-	./setup
+	chmod u+x ./setup
+	sudo ./setup
 
 and otherwise, run
 
+	chmod u+x ./symlink
 	./symlink
 
 to symlink to your home directory.

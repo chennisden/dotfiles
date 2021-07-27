@@ -12,7 +12,12 @@ zsh 1
 chsh -s $(which zsh)
 
 # symlink
+chmod u+x ./symlink
 ./symlink
+
+# make scripts executable
+chmod u+x ./chmod-all
+./chmod-all
 
 # wget and curl
 
@@ -54,24 +59,4 @@ cd "install-tl-$(date +%Y%m%d)"
 
 ## Clone Dennis Chen repos
 
-DTEX=(ifallfalse macrolist palette scrambledenvs chennistex bounce) # Repository names
-
-clone()
-{
-git clone https://github.com/chennisden/$1
-}
-
-TEXMF=$(kpsewhich --var-value TEXMFHOME)
-
-if [ ! -d "$TEXMF/tex/latex"]
-then
-	mkdir -p "$TEXMF/tex/latex"
-fi
-
-cd "$TEXMF/tex/latex" # go to texmf to clone
-
-for repo in ${DTEX[@]};
-	do clone $repo
-done
-
-cd # return
+./bin/dtex clone
