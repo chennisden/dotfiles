@@ -1,4 +1,4 @@
-# !/usr/bin/bash
+#!/usr/bin/bash
 
 cd # run in user dir
 
@@ -16,8 +16,8 @@ chmod u+x ./symlink
 ./symlink
 
 # make scripts executable
-chmod u+x ./chmod-all
-./chmod-all
+chmod u+x ./make-bin-executable
+./make-bin-executable
 
 # wget and curl
 

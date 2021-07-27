@@ -1,5 +1,13 @@
-# !/usr/bin/bash
+#!/usr/bin/bash
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-rsync -r --exclude ".git" --exclude "README.md" --exclude "setup" --exclude "symlink" . ~
+# Basically copied from https://stackoverflow.com/questions/3685970/check-if-a-bash-array-contains-a-value
+
+exclude=( ".git" "README.md" "setup" "symlink" "make-bin-executable" )
+
+for file in *; do
+	if [[ ! " ${exclude[@]} " =~ " ${file} " ]]; then
+		ln -sv "$PWD/$file" $HOME
+	fi
+done

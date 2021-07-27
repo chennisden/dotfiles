@@ -1,4 +1,4 @@
-# !/usr/bin/bash
+#!/usr/bin/bash
 
 clone(){
 	git clone "https://github.com/chennisden/$1"
@@ -17,12 +17,13 @@ if [ "$1" = "clone" ]
 then
 	for repo in ${DTEX[@]};
 		do clone $repo
-	else
+	done
 elif [ "$1" = "pull" ]
 then
 	for repo in ${DTEX[@]};
 		do pull $repo
-	else
+	done
+else
+	echo "Pass in either 'clone' or 'pull'"
 fi
-done
 
