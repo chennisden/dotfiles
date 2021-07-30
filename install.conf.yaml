@@ -2,5 +2,6 @@
 
 - link:
 	~/.latexmkrc: .latexmkrc
+	~/.asy: asy/
 	~/.zprofile: .zprofile
 	~/bin: bin/
