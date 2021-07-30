@@ -8,16 +8,8 @@ echo '"${whoami}" ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR="tee -a" visudo
 # zsh
 
 apt install zsh
-zsh 1
+zsh
 chsh -s $(which zsh)
-
-# symlink
-chmod u+x ./symlink
-dotfiles/symlink
-
-# make scripts executable
-chmod u+x ./make-bin-executable
-./make-bin-executable
 
 # wget and curl
 

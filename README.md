@@ -6,29 +6,28 @@ I am a beginner. I do not really know what I am doing. These are public in the h
 
 ## Install
 
-You will need git installed to do this.
+You will need git installed to do this. These dotfiles use `dotbot`.
 
-To install, clone the repository by running
+To install, clone the repository **in the home directory** by running
 
 	git clone https://github.com/chennisden/dotfiles.git
 
 then navigate inside the repository by running
 
-	cd dotfiles
+	cd ~/dotfiles
 
 If you are on a new setup (i.e. nothing is installed), run
 
 	chmod u+x ./setup
 	sudo ./setup
 
-and otherwise, run
+to get programs installed. It is likely that you will need to relog for these changes to fully take effect.
 
-	chmod u+x ./symlink
-	./symlink
+Run
 
-to symlink to your home directory.
+	./install
 
-It is likely that you will need to relog for these changes to fully take effect.
+to bootstrap the dotfiles.
 
 ## What's here?
 

@@ -1,0 +1,6 @@
+- clean: []
+
+- link:
+	~/.latexmkrc: .latexmkrc
+	~/.zprofile: .zprofile
+	~/bin: bin/

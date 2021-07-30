@@ -1,4 +1,4 @@
-sub run_asy {
+sub asy {
     return system("asy -o \$(dirname '$_[0]') '$_[0]'");
 }
 add_cus_dep("asy", "eps", 0, "run_asy");
