@@ -1,7 +1,11 @@
-- clean: []
+- defaults:
+    link:
+        relink: true
+
+- clean: ['~']
 
 - link:
-	~/.latexmkrc: .latexmkrc
-	~/.asy: asy/
-	~/.zprofile: .zprofile
-	~/bin: bin/
+    ~/.latexmkrc: .latexmkrc
+    ~/.asy: asy/
+    ~/.zprofile: .zprofile
+    ~/bin: bin/
