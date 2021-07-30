@@ -9,3 +9,4 @@
     ~/.asy: asy/
     ~/.zprofile: .zprofile
     ~/bin: bin/
+    ~/vim: vim/
