@@ -7,7 +7,7 @@
 - link:
     ~/.latexmkrc: latexmkrc
     ~/.asy: asy/
-		~/.zshrc: zshrc
+    ~/.zshrc: zshrc
     ~/.zprofile: zprofile
     ~/bin: bin/
-    ~/vim: vim/
+    ~/.vim: vim/
