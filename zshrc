@@ -41,4 +41,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # Aliases
 
-alias texmf="nautilus texmf/tex/latex"
+alias texmf="nautilus ~/texmf/tex/latex"
+alias testtex="nautilus ~/test/tex"
