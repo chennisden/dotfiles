@@ -5,8 +5,9 @@
 - clean: ['~']
 
 - link:
-    ~/.latexmkrc: .latexmkrc
+    ~/.latexmkrc: latexmkrc
     ~/.asy: asy/
-    ~/.zprofile: .zprofile
+		~/.zshrc: zshrc
+    ~/.zprofile: zprofile
     ~/bin: bin/
     ~/vim: vim/
