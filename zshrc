@@ -43,3 +43,7 @@ export NVM_DIR="$HOME/.nvm"
 
 alias texmf="nautilus ~/texmf/tex/latex"
 alias testtex="nautilus ~/test/tex"
+texcmp(){
+pdflatex "~/texmf/tex/latex/$1/$1.dtx"
+pdflatex $1.tex
+}
