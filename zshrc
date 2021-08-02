@@ -47,3 +47,5 @@ texcmp(){
 pdflatex "~/texmf/tex/latex/$1/$1.dtx"
 pdflatex $1.tex
 }
+alias math="nautilus ~/math"
+alias foray="nautilus ~/math/geo-foray-textbook"

@@ -1,6 +1,6 @@
 # Dennis Chen's Ubuntu Dotfiles
 
-These are my dotfiles I use to setup Ubuntu.
+These are my dotfiles I use to setup Ubuntu. These *should* work on any distro of Linux (besides `ubuntu_setup`).
 
 I am a beginner. I do not really know what I am doing. These are public in the hopes that they will be useful to other people, but word of warning: it is incredibly likely I screw up in a myriad of ways. Since my dotfiles are personal, there is absolutely no guarantee of stability.
 
