@@ -1,6 +1,8 @@
-# Dennis Chen's Ubuntu Dotfiles
+# Dennis Chen's Arch Dotfiles
 
-These are my dotfiles I use to setup Ubuntu. These *should* work on any distro of Linux (besides `ubuntu_setup`).
+These are my dotfiles I use to setup Arch. I used to use Ubuntu but finally got around to installing Arch. So now I can say
+
+    I use arch btw.
 
 I am a beginner. I do not really know what I am doing. These are public in the hopes that they will be useful to other people, but word of warning: it is incredibly likely I screw up in a myriad of ways. Since my dotfiles are personal, there is absolutely no guarantee of stability.
 
@@ -14,14 +16,7 @@ To install, clone the repository **in the home directory** by running
 
 then navigate inside the repository by running
 
-	cd ~/dotfiles
-
-If you are on a new setup (i.e. nothing is installed), run
-
-	chmod u+x ./setup
-	sudo ./setup
-
-to get programs installed. It is likely that you will need to relog for these changes to fully take effect.
+	cd dotfiles
 
 Run
 
@@ -32,8 +27,9 @@ to bootstrap the dotfiles.
 ## What's here?
 
 I use
-- Ubuntu as distro
+- Arch Linux as distro
+- i3 as window manager
 - Zsh as shell
 - Vim as editor (for TeX)
-- VSCode as IDE (for React JS)
-- "Vanilla" TeX Live as TeX distribution
+- VSCode as IDE (for React JS + larger TeX projects)
+- TeX Live (from pacman)
