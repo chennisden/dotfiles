@@ -11,3 +11,4 @@
     ~/.zprofile: zprofile
     ~/bin: bin/
     ~/.vim: vim/
+    ~/.Xresources: Xresources
