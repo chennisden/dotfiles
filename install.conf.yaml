@@ -12,3 +12,9 @@
     ~/bin: bin/
     ~/.vim: vim/
     ~/.Xresources: Xresources
+    ~/.gitconfig: gitconfig
+# texmf
+    ~/texmf/tex/latex/chennistex: ~/git/chennistex
+    ~/texmf/tex/latex/bounce: ~/git/bounce
+    ~/texmf/tex/latex/resumed: ~/git/resumed
+    ~/texmf/tex/latex/denniscv: ~/git/denniscv

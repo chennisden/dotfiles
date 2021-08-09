@@ -50,3 +50,13 @@ pdflatex $1.tex
 alias math="nautilus ~/math"
 alias foray="nautilus ~/math/geo-foray-textbook"
 alias clean="rm *.asy; rm *.eps; rm *.hint; rm *.solu; rm *-*.pdf; rm *.aux; rm *.dvi; rm *.fdb_latexmk; rm *.fls; rm *.log; rm *.out; rm *.pre; rm *.toc" # for foray
+
+# OH MY ZSH!
+
+ZSH_THEME = "agnoster"
+
+plugins=(
+	git
+) % vim install.conf.yaml 
+dennisc@arch-dennis ~/git/dotfiles
+
