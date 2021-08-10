@@ -29,6 +29,7 @@ to bootstrap the dotfiles.
 I use
 - Arch Linux as distro
 - i3 as window manager
+- flameshot to take screenshots
 - Zsh as shell
 - Vim as editor (for TeX)
 - VSCode as IDE (for React JS + larger TeX projects)

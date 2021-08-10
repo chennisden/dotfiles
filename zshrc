@@ -99,3 +99,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+
+# Add $HOME/bin to path
+export PATH=$HOME/bin:$PATH
+
+# TeX Live stuff
+export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
+export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH
+export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH
+
