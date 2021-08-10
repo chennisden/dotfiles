@@ -15,7 +15,7 @@
     ~/.gitconfig: gitconfig
     ~/.xbindkeysrc: xbindkeysrc
 # texmf
-    ~/texmf/tex/latex/chennistex: ~/git/chennistex
-    ~/texmf/tex/latex/bounce: ~/git/bounce
-    ~/texmf/tex/latex/resumed: ~/git/resumed
-    ~/texmf/tex/latex/denniscv: ~/git/denniscv
+    ~/texmf/tex/latex/chennistex: ~/git/tex/chennistex
+    ~/texmf/tex/latex/bounce: ~/git/tex/bounce
+    ~/texmf/tex/latex/resumed: ~/git/tex/resumed
+    ~/texmf/tex/latex/denniscv: ~/git/tex/denniscv
