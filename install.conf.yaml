@@ -19,3 +19,7 @@
     ~/texmf/tex/latex/bounce: ~/git/tex/bounce
     ~/texmf/tex/latex/resumed: ~/git/tex/resumed
     ~/texmf/tex/latex/denniscv: ~/git/tex/denniscv
+    # some private math advance styles
+    # if you are cloning, you either are me, should remove this, or can just go along without caring.
+    ~/texmf/tex/latex/macontest: ~/git/tex/macontest
+    ~/texmf/tex/latex/mabook: ~/git/tex/mabook
