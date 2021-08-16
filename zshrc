@@ -103,6 +103,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+panpdf(){
+	pandoc -s -f markdown $1.md -t pdf -o $1.pdf
+}
 
 # Add $HOME/bin to path
 export PATH=$HOME/bin:$PATH
