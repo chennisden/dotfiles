@@ -30,8 +30,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use amixer to adjust volume
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym $mod+m exec amixer -D pulse sset Master mute
 bindsym $mod+u exec amixer -D pulse sset Master unmute
 # Use Mouse+$mod to drag floating windows to their wanted position
