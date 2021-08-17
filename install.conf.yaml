@@ -8,6 +8,7 @@
     ~/.latexmkrc: latexmkrc
     ~/.asy: asy/
     ~/.config/i3: i3/
+    ~/.i3blocks.conf: i3blocks.conf
     ~/.zshrc: zshrc
     ~/bin: bin/
     ~/.vim: vim/
