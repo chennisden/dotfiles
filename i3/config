@@ -178,6 +178,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+set $bar-color #00000c
 set $bg-color #2f343f
 set $inactive-bg-color #2f343f
 set $text-color #f3f4f5
@@ -199,11 +200,11 @@ bar {
         position top
         status_command i3blocks
         colors {
-		            background $bg-color
+		            background $bar-color
 	    	        separator #757575
 		            #                  border             background         text
-		            focused_workspace  $bg-color          $bg-color          $text-color
-		            inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+		            focused_workspace  $bar-color          $bar-color          $text-color
+		            inactive_workspace $bar-color $bar-color $inactive-text-color
 		            urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	      }
 }
