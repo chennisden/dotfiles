@@ -37,7 +37,11 @@ then
         then
             # Battery very low. Red color.
             echo "#FA1E44"
-        else
+        elif [ "${BAT_LEVEL%?}" -le 30 ]
+				then
+            # Battery moderately low. Orange color.
+						echo "#c66c0b"
+				else
             # Battery not charging but at decent level. Green color.
             echo "#007872"
         fi
