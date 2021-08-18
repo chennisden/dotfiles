@@ -1,5 +1,15 @@
 # Long text
-echo " $(iwgetid -r) "
+if [ "$(iwgetid -r)" = "" ]
+then
+    echo " NO WIFI "
+    COLOR=#FA1E44
+else
+    echo " $(iwgetid -r) "
+    COLOR=#69f727
+fi
 
 # Short text
 echo " W: $(iwgetid -r) "
+
+# Color
+echo "$COLOR"
