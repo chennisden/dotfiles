@@ -208,6 +208,4 @@ bar {
 	      }
 }
 
-# bindsym $mod+q exec ~/.config/i3/bin/lock.sh
-
 exec ~/.fehbg &
