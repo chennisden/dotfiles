@@ -25,3 +25,4 @@ else
 fi
 
 echo "$ICON" "$SOUND_LEVEL" | awk '{ printf(" %s:%3s%% \n", $1, $2) }'
+echo "#FF0000"
