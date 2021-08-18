@@ -42,6 +42,7 @@ floating_modifier $mod
 
 # Take screen shot with flameshot
 bindsym --release Print exec flameshot gui
+bindsym --release Shift+Print exec flameshot full -c
 
 # bindsym --release $mod+Print exec "import ~/Pictures/$(date)"
 # bindsym --release $mod+Shift+Print exec "import -window root ~/Pictures/$(date)"
