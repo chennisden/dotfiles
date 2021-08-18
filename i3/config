@@ -39,7 +39,10 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%- && pkill -RTMIN+1 i3bloc
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ && pkill -RTMIN+1 i3blocks
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-# Take screen shot 
+
+# Take screen shot with flameshot
+bindsym --release Print exec flameshot gui
+
 # bindsym --release $mod+Print exec "import ~/Pictures/$(date)"
 # bindsym --release $mod+Shift+Print exec "import -window root ~/Pictures/$(date)"
 # bindsym --release $mod+Print exec "scrot '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/'"
