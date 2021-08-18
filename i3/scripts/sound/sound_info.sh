@@ -12,7 +12,9 @@ ICON=$VOLUME_MUTE
 if [ "$MUTED" = "1" ]
 then
     ICON="$VOLUME_MUTE"
+    COLOR=#FA1E44
 else
+    COLOR=#20b2aa
     if [ "$SOUND_LEVEL" -lt 34 ]
     then
         ICON="$VOLUME_LOW"
@@ -24,5 +26,11 @@ else
     fi
 fi
 
+# Full text
 echo "$ICON" "$SOUND_LEVEL" | awk '{ printf(" %s:%3s%% \n", $1, $2) }'
-echo "#FF0000"
+
+# Short text
+echo "S: $SOUND_LEVEL"
+
+# Color
+echo "$COLOR"
