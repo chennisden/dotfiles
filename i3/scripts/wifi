@@ -1,10 +1,10 @@
 # Long text
 if [ "$(iwgetid -r)" = "" ]
 then
-    echo " NO WIFI "
+    echo "❗NO WIFI "
     COLOR=#FA1E44
 else
-    echo " $(iwgetid -r) "
+    echo " 📶 $(iwgetid -r) "
     COLOR=#69f727
 fi
 
