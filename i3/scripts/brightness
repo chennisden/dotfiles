@@ -1,0 +1,8 @@
+if [ $(xbacklight -get) -lt 50 ]
+then
+	ICON=🔅
+else
+	ICON=🔆
+fi
+
+echo " $ICON $(xbacklight -get) "
