@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/dennisc/git/dotfiles/i3/scripts'
 let g:netrw_dirhist_2='/sys/class/backlight/intel_backlight'
 let g:netrw_dirhist_1='/home/dennisc/.cache/yay/oh-my-zsh-git/oh-my-zsh-git'
