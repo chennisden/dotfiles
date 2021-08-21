@@ -114,3 +114,6 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
 export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH
 export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH
+
+# NVM
+source /usr/share/nvm/init-nvm.sh
