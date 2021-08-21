@@ -14,7 +14,6 @@
     ~/.vim: vim/
     ~/.profile: profile
     ~/.Xresources: Xresources
-    ~/.xinitrc: xinitrc
 # texmf
     ~/texmf/tex/latex/chennistex: ~/git/tex/chennistex
     ~/texmf/tex/latex/bounce: ~/git/tex/bounce
