@@ -102,9 +102,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+
 panpdf(){
 	pandoc -s -f markdown $1.md -t pdf -o $1.pdf
+}
+
+dc-clone(){
+	git clone https://github.com/chennisden/$1
+}
+
+ma-clone(){
+	git clone https://github.com/mathadvance/$1
 }
 
 # Add $HOME/bin to path
