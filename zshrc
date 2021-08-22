@@ -127,3 +127,6 @@ export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH
 
 # NVM
 source /usr/share/nvm/init-nvm.sh
+
+# Fix OMZ https://github.com/ohmyzsh/ohmyzsh/issues/6985
+export LC_ALL=en_US.UTF-8

@@ -34,9 +34,9 @@ exec --no-startup-id nm-applet
 # bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10 && pkill -RTMIN+2 i3blocks
 
 # Use amixer to adjust volume
-bindsym XF86AudioMute exec amixer set Master toggle && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec amixer set Master 5%- && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ && pkill -RTMIN+1 i3blocks
+# bindsym XF86AudioMute exec amixer set Master toggle && pkill -RTMIN+1 i3blocks
+# bindsym XF86AudioLowerVolume exec amixer set Master 5%- && pkill -RTMIN+1 i3blocks
+# bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ && pkill -RTMIN+1 i3blocks
 
 # Reset alsactl when audio goes bad
 bindsym $mod+XF86AudioMute exec alsactl restore -P
