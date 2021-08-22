@@ -4,3 +4,6 @@
 [submodule "vim/vim/plugged/markdown-preview.nvim"]
 	path = vim/vim/plugged/markdown-preview.nvim
 	url = https://github.com/chennisden/markdown-preview.nvim
+[submodule "vim/plugged/markdown-preview.nvim"]
+	path = vim/plugged/markdown-preview.nvim
+	url = https://github.com/chennisden/markdown-preview.nvim
