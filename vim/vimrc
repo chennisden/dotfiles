@@ -11,4 +11,12 @@ endif
 
 call plug#begin('~/.vim/plugged')
 	Plug 'chennisden/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+	Plug 'preservim/nerdtree'
+	" NerdTree extensions
+	Plug 'Xuyuanp/nerdtree-git-plugin'
+	Plug 'ryanoasis/vim-devicons'
 call plug#end()
+
+" Auto-start NERDTREE if no arg (ie no file opened)
+" and move cursor to other window
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
