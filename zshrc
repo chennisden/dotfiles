@@ -102,9 +102,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+
 panpdf(){
 	pandoc -s -f markdown $1.md -t pdf -o $1.pdf
+}
+
+dc-clone(){
+	git clone https://github.com/chennisden/$1
+}
+
+ma-clone(){
+	git clone https://github.com/mathadvance/$1
 }
 
 # Add $HOME/bin to path
@@ -114,6 +124,9 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
 export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH
 export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH
+
+# NVM
+source /usr/share/nvm/init-nvm.sh
 
 # Fix OMZ https://github.com/ohmyzsh/ohmyzsh/issues/6985
 export LC_ALL=en_US.UTF-8

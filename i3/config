@@ -30,13 +30,13 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Adjust brightness via xbacklight
-bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 10 && pkill -RTMIN+2 i3blocks
-bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10 && pkill -RTMIN+2 i3blocks
+# bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 10 && pkill -RTMIN+2 i3blocks
+# bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10 && pkill -RTMIN+2 i3blocks
 
 # Use amixer to adjust volume
-bindsym XF86AudioMute exec amixer set Master toggle && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec amixer set Master 5%- && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ && pkill -RTMIN+1 i3blocks
+# bindsym XF86AudioMute exec amixer set Master toggle && pkill -RTMIN+1 i3blocks
+# bindsym XF86AudioLowerVolume exec amixer set Master 5%- && pkill -RTMIN+1 i3blocks
+# bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ && pkill -RTMIN+1 i3blocks
 
 # Reset alsactl when audio goes bad
 bindsym $mod+XF86AudioMute exec alsactl restore -P
@@ -163,7 +163,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # shutdown
-bindsym $mod+Shift+s exec shutdown now
+bindsym $mod+Shift+s exec sudo shutdown now
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -221,5 +221,5 @@ bar {
 		            urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	      }
 }
-
+exec xrandr --output DP-0 --output DP-2 --left-of DP-0
 exec ~/.fehbg &
