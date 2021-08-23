@@ -1,2 +1,2 @@
-# Ignore apps, assume people get them later
-*.AppImage
+# Ignore vim plug
+vim/plugged
