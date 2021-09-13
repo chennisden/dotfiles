@@ -49,3 +49,6 @@ unset TERMCAP
 
 # Man is much better than us at figuring this out
 unset MANPATH
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
