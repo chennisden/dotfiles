@@ -117,6 +117,10 @@ ma-clone(){
 	git clone https://github.com/mathadvance/$1
 }
 
+git-clone(){
+	git clone https://github.com/$1/$2
+}
+
 # Add $HOME/bin to path
 export PATH=$HOME/bin:$PATH
 
