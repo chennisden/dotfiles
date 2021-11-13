@@ -14,4 +14,4 @@
     ~/.vim: vim/
     ~/.profile: profile
     ~/.Xresources: Xresources
-    ~/texmf/tex/latex: ~/git/tex
+    ~/.config/picom.conf: picom.conf 
