@@ -86,6 +86,11 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+bindsym $mod+Ctrl+Left fullscreen toggle; focus left; fullscreen toggle;
+bindsym $mod+Ctrl+Right fullscreen toggle; focus right; fullscreen toggle;
+bindsym $mod+Ctrl+Up fullscreen toggle; focus up; fullscreen toggle;
+bindsym $mod+Ctrl+Down fullscreen toggle; focus down; fullscreen toggle;
+
 # move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
