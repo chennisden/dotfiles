@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="eastwood"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -134,3 +134,10 @@ source /usr/share/nvm/init-nvm.sh
 
 # Fix OMZ https://github.com/ohmyzsh/ohmyzsh/issues/6985
 export LC_ALL=en_US.UTF-8
+
+# RustC
+export PATH="$PATH:/usr/bin/rustc"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+if [ -e /home/dc/.nix-profile/etc/profile.d/nix.sh ]; then . /home/dc/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

@@ -1,0 +1,63 @@
+#! /usr/bin/bash
+
+# Help command
+help()
+{
+	echo "Usage: ctanzip [OPTION]... DIRECTORY..."
+	echo "Zips proper files in DIRECTORY(ies), if they do not already exist."
+	echo
+	echo "  -h,	--help	display this help and exit"
+}
+
+# Process options
+
+while getopts ":h" option; do
+	case $option in
+		h) # display help
+			help
+			exit;;
+	esac
+done
+
+# Check that number of args is correct
+if [ $# -eq 0 ];
+then
+	echo "ctanzip: missing operand"
+	echo "Try 'ctanzip --help' for more information."	
+fi
+
+# Execute
+
+for var in "$@"
+do
+	# Check if dir exists
+	if [ ! -d "$var" ];
+	then
+		echo "ctanzip: cannot zip directory '$var': Directory does not exist"
+		continue
+	fi
+
+	NORMALPATH=$(echo $var | sed 's:/*$::')
+	BASENAME=${NORMALPATH##*/}
+	echo $BASENAME
+	# Check if it's a git repo
+	if [ -d "$var/.git" ];
+	then
+		# Clone repo, remove .git and .gitignore
+		git clone $var "temp-$BASENAME/$BASENAME"
+		rm -rf "temp-$BASENAME/$BASENAME/.git"
+		rm -rf "temp-$BASENAME/$BASENAME/.gitignore"
+	else
+		# Copy dir, ignoring all hidden files
+		rsync -a --exclude='.*' $var "temp-$BASENAME/$BASENAME"
+	fi
+
+	# Zip file
+	cd "temp-$BASENAME"
+	zip -r "$BASENAME.zip" "$BASENAME"
+	cd ..
+	mv "temp-$BASENAME/$BASENAME.zip" "$BASENAME.zip" 
+
+	# Cleanup
+	rm -rf "temp-$BASENAME"
+done

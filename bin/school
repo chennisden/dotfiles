@@ -1,1 +1,1 @@
-librewolf -P school
+chromium --profile-directory=school

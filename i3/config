@@ -10,9 +10,14 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 set $mod Mod4
 
+gaps inner 10
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:System San Francisco Display 13
+
+default_border pixel 2 
+default_floating_border pixel 2
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -156,6 +161,13 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# picom toggle
+bindsym $mod+t exec picom-toggle 
+
+# ma-ssh
+bindsym $mod+m exec alacritty --hold -e ma-ssh
+bindsym $mod+Shift+m exec alacritty --hold -e ma-ssh mast
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -192,7 +204,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 set $bar-color #00000c
-set $bg-color #2f343f
+set $bg-color #009F6B 
 set $inactive-bg-color #2f343f
 set $text-color #f3f4f5
 set $inactive-text-color #676E7D
@@ -224,3 +236,4 @@ bar {
 exec xrandr --output DP-0 --output DP-2 --left-of DP-0
 exec ~/.fehbg &
 exec dunst
+exec_always --no-startup-id picom & 
