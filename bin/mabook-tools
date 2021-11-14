@@ -1,0 +1,37 @@
+#! /usr/bin/bash
+
+DIR=${2:-.}	
+
+case $1 in
+	envs)
+	FORMAT="%-12s %-30s\n"	
+	printf "$FORMAT" "problems" "a special command that outputs problems and challenges"
+	printf "$FORMAT" "defi" "definitions"
+	printf "$FORMAT" "prop" "propositions"
+	printf "$FORMAT" "theo" "theorems"
+	printf "$FORMAT" "hint" "hints"
+	printf "$FORMAT" "hints" "number of problems that have some hint(s)"
+	printf "$FORMAT" "solu" "solutions"
+	printf "$FORMAT" "solus" "number of problems that have some solution(s)"
+	printf "$FORMAT" "exam" "examples"
+	printf "$FORMAT" "figure" "figures"
+	printf "$FORMAT" "asy" "diagrams in figures"
+	printf "$FORMAT" "prob" "problems"
+	printf "$FORMAT" "challenge" "challenge problems"
+	;;
+
+	problems)
+		
+		PROBLEMS=$(grep begin\{prob\} -r ${DIR} | wc -l)
+		CHALLENGES=$(grep begin\{challenge\} -r ${DIR} | wc -l)
+
+		echo $PROBLEMS problems
+		echo $CHALLENGES challenges
+		echo $(expr $PROBLEMS + $CHALLENGES) total
+	;;
+
+	*)
+		echo $(grep begin\{$1\} -r ${DIR} | wc -l)
+	;;
+	
+esac
