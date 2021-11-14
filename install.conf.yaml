@@ -14,4 +14,5 @@
     ~/.vim: vim/
     ~/.profile: profile
     ~/.Xresources: Xresources
-    ~/.config/picom.conf: picom.conf 
+    ~/.config/picom.conf: picom.conf
+    ~/.config/zathura: zathura/
