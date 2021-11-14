@@ -1,12 +1,13 @@
 #! /usr/bin/bash
 
 DIR=${2:-$(cat $HOME/.config/mabook-tools)}	
+arg_1=${1:-summary}
 
 list() {
 	printf "%-12s %-6s\n" $1 $(grep begin\{$1\} -r ${DIR} | wc -l)
 }
 
-case $1 in
+case $arg_1 in
 	
 	set)
 
@@ -20,7 +21,7 @@ case $1 in
 
 			*)
 					
-				echo "You need to pass in a file"
+				echo "Invalid set operation"
 
 			;;
 
