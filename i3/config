@@ -239,6 +239,6 @@ bar {
 	      }
 }
 exec xrandr --output DP-0 --output DP-2 --left-of DP-0
-exec ~/.fehbg &
+nitrogen --restore &
 exec dunst
 exec_always --no-startup-id picom & 

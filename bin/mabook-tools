@@ -1,23 +1,50 @@
 #! /usr/bin/bash
 
-DIR=${2:-.}	
+DIR=${2:-$(cat $HOME/.config/mabook-tools)}	
+
+list() {
+	printf "%-12s %-6s\n" $1 $(grep begin\{$1\} -r ${DIR} | wc -l)
+}
 
 case $1 in
+	
+	set)
+
+		case $2 in
+
+			default)
+
+				echo $3 > $HOME/.config/mabook-tools
+
+			;;
+
+			*)
+					
+				echo "You need to pass in a file"
+
+			;;
+
+		esac
+	
+	;;
+	
 	envs)
-	FORMAT="%-12s %-30s\n"	
-	printf "$FORMAT" "problems" "a special command that outputs problems and challenges"
-	printf "$FORMAT" "defi" "definitions"
-	printf "$FORMAT" "prop" "propositions"
-	printf "$FORMAT" "theo" "theorems"
-	printf "$FORMAT" "hint" "hints"
-	printf "$FORMAT" "hints" "number of problems that have some hint(s)"
-	printf "$FORMAT" "solu" "solutions"
-	printf "$FORMAT" "solus" "number of problems that have some solution(s)"
-	printf "$FORMAT" "exam" "examples"
-	printf "$FORMAT" "figure" "figures"
-	printf "$FORMAT" "asy" "diagrams in figures"
-	printf "$FORMAT" "prob" "problems"
-	printf "$FORMAT" "challenge" "challenge problems"
+	
+		FORMAT="%-12s %-30s\n"	
+		printf "$FORMAT" "problems" "a special command that outputs problems and challenges"
+		printf "$FORMAT" "defi" "definitions"
+		printf "$FORMAT" "prop" "propositions"
+		printf "$FORMAT" "theo" "theorems"
+		printf "$FORMAT" "hint" "hints"
+		printf "$FORMAT" "hints" "number of problems that have some hint(s)"
+		printf "$FORMAT" "solu" "solutions"
+		printf "$FORMAT" "solus" "number of problems that have some solution(s)"
+		printf "$FORMAT" "exam" "examples"
+		printf "$FORMAT" "figure" "figures"
+		printf "$FORMAT" "asy" "diagrams in figures"
+		printf "$FORMAT" "prob" "problems"
+		printf "$FORMAT" "challenge" "challenge problems"
+	
 	;;
 
 	problems)
@@ -30,8 +57,24 @@ case $1 in
 		echo $(expr $PROBLEMS + $CHALLENGES) total
 	;;
 
+	summary)
+		list defi
+		list prop
+		list theo
+		list hint
+		list hints
+		list solu
+		list solus
+		list exam
+		list figure
+		list subfigure
+		list asy
+		list prob
+		list challenge
+	;;
+
 	*)
-		echo $(grep begin\{$1\} -r ${DIR} | wc -l)
+		list $1
 	;;
 	
 esac
