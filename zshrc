@@ -103,8 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
-
 panpdf(){
 	pandoc -s -f markdown $1.md -t pdf -o $1.pdf
 }
@@ -121,13 +119,10 @@ git-clone(){
 	git clone https://github.com/$1/$2
 }
 
-# Add $HOME/bin to path
-export PATH=$HOME/bin:$PATH
-
 # TeX Live stuff
-export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
-export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH
-export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH
+export PATH=$HOME/.local/bin/texlive/2021/bin/x86_64-linux:$PATH
+export INFOPATH=$HOME/.local/bin/texlive/2021/texmf-dist/doc/info:$INFOPATH
+export MANPATH=$HOME/.local/texlive/2021/texmf-dist/doc/man:$MANPATH
 
 # NVM
 source /usr/share/nvm/init-nvm.sh
@@ -141,3 +136,6 @@ export PATH="$PATH:/usr/bin/rustc"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 if [ -e /home/dc/.nix-profile/etc/profile.d/nix.sh ]; then . /home/dc/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Add $HOME/bin to path
+export PATH=$HOME/bin:$PATH
