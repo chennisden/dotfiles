@@ -1,0 +1,9 @@
+#! /usr/bin/zsh
+
+# run script inside
+
+FOLDER=${PWD##*/}
+
+{ echo y; } | tex $FOLDER.ins
+pdflatex $FOLDER.dtx
+makeindex -s gglo.ist -o $FOLDER.gls $FOLDER.glo

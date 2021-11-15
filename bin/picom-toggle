@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+OUTPUT=$()
+if [[ $(pgrep --exact picom) ]]; then
+  pkill picom
+else
+  picom &  
+fi

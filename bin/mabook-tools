@@ -1,0 +1,106 @@
+#! /usr/bin/bash
+
+DIR=${2:-$(cat $HOME/.config/mabook-tools/default)}	
+arg_1=${1:-summary}
+
+list() {
+	printf "%-12s %-6s\n" $1 $(grep begin\{$1\} -r ${DIR} | wc -l)
+}
+
+case $arg_1 in
+	
+	set)
+
+		case $2 in
+
+			default)
+
+				echo $3 > $HOME/.config/mabook-tools/default
+
+			;;
+
+			template)
+				
+				cat $3 > $HOME/.config/mabook-tools/template-start
+				cat $4 > $HOME/.config/mabook-tools/template-end
+
+			;;	
+
+			*)
+					
+				echo "Invalid set operation"
+
+			;;
+
+		esac
+	
+	;;
+	
+	preview)
+		
+		TEMPLATE_START=${3:-$(cat $HOME/.config/mabook-tools/template-start)}
+		TEMPLATE_END=${4:-$(cat $HOME/.config/mabook-tools/template-end)}
+
+		PREVIEW_FILE=$HOME/.cache/mabook-tools/preview.tex
+
+		echo "$TEMPLATE_START" > $PREVIEW_FILE 
+		cat $DIR >> $PREVIEW_FILE
+		echo "$TEMPLATE_END" >> $PREVIEW_FILE
+
+		PWDIR=$(pwd)
+		cd $HOME/.cache/mabook-tools
+		latexmk -pdf preview.tex
+		cd $PWDIR
+
+	;;
+
+	envs)
+	
+		FORMAT="%-12s %-30s\n"	
+		printf "$FORMAT" "problems" "a special command that outputs problems and challenges"
+		printf "$FORMAT" "defi" "definitions"
+		printf "$FORMAT" "prop" "propositions"
+		printf "$FORMAT" "theo" "theorems"
+		printf "$FORMAT" "hint" "hints"
+		printf "$FORMAT" "hints" "number of problems that have some hint(s)"
+		printf "$FORMAT" "solu" "solutions"
+		printf "$FORMAT" "solus" "number of problems that have some solution(s)"
+		printf "$FORMAT" "exam" "examples"
+		printf "$FORMAT" "figure" "figures"
+		printf "$FORMAT" "asy" "diagrams in figures"
+		printf "$FORMAT" "prob" "problems"
+		printf "$FORMAT" "challenge" "challenge problems"
+	
+	;;
+
+	problems)
+		
+		PROBLEMS=$(grep begin\{prob\} -r ${DIR} | wc -l)
+		CHALLENGES=$(grep begin\{challenge\} -r ${DIR} | wc -l)
+
+		echo $PROBLEMS problems
+		echo $CHALLENGES challenges
+		echo $(expr $PROBLEMS + $CHALLENGES) total
+	;;
+
+	summary)
+		list defi
+		list prop
+		list theo
+		list hint
+		list hints
+		list solu
+		list solus
+		list exam
+		list figure
+		list subfigure
+		list asy
+		list prob
+		list challenge
+	;;
+
+	*)
+		list $1
+	;;
+	
+esac

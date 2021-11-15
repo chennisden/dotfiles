@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/dennisc/.kde4/share/config'
+let g:netrw_dirhist_7='/home/dennisc/.kde4/share'
+let g:netrw_dirhist_6='/home/dennisc/.kde4/share/apps'
+let g:netrw_dirhist_5='/home/dennisc/.kde4/share'
+let g:netrw_dirhist_4='/home/dennisc/.kde4'
+let g:netrw_dirhist_3='/home/dennisc/git/dotfiles/i3/scripts'
+let g:netrw_dirhist_2='/sys/class/backlight/intel_backlight'
+let g:netrw_dirhist_1='/home/dennisc/.cache/yay/oh-my-zsh-git/oh-my-zsh-git'

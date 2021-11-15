@@ -1,0 +1,24 @@
+\documentclass{mabook}
+
+\RequirePackage{newpxtext,newpxmath} % fonts
+
+\usepackage{asymptote}
+	\begin{asydef}
+		usepackage("newpxtext, newpxmath");
+	\end{asydef}
+
+\usepackage{float} % For captions
+\usepackage{subcaption} % For subfigures
+	\captionsetup[subfigure]{labelformat=empty}
+
+\usepackage{scrambledenvs}
+	\newscrambledenv{hint}
+	\newscrambledenv{solu}
+		\solulabel{solution}
+
+\title{A Brief Foray Into Euclidean Geometry}
+\subtitle{Distilled to the Basics}
+\author{Dennis Chen}
+\date{\the\year}
+
+\begin{document}

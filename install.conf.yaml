@@ -1,0 +1,19 @@
+- defaults:
+    link:
+        relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.latexmkrc: latexmkrc
+    ~/.asy: asy/
+    ~/.config/i3: i3/
+    ~/.i3blocks.conf: i3blocks.conf
+    ~/.zshrc: zshrc
+    ~/bin: bin/
+    ~/.vim: vim/
+    ~/.profile: profile
+    ~/.Xresources: Xresources
+    ~/.config/picom.conf: picom.conf
+    ~/.config/zathura: zathura/
+    ~/.mabook-tools: mabook-tools/

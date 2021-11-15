@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+clone(){
+	git clone "https://github.com/chennisden/$1"
+}
+
+pull(){
+	git -C $1 pull
+}
+
+TEXMF=$(kpsewhich --var-value TEXMFHOME)
+cd "$TEXMF/tex/latex"
+
+DTEX=(ifallfalse macrolist palette scrambledenvs chennistex bounce) # Repository names
+
+if [ "$1" = "clone" ]
+then
+	for repo in ${DTEX[@]};
+		do clone $repo
+	done
+elif [ "$1" = "pull" ]
+then
+	for repo in ${DTEX[@]};
+		do pull $repo
+	done
+else
+	echo "Pass in either 'clone' or 'pull'"
+fi
+
