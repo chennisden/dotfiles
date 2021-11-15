@@ -21,8 +21,8 @@ case $arg_1 in
 
 			template)
 				
-				cat $3 > $HOME/.config/mabook-tools/template-start
-				cat $4 > $HOME/.config/mabook-tools/template-end
+				ln -s $3 $HOME/.config/mabook-tools/template-start
+				ln -s $4 $HOME/.config/mabook-tools/template-end
 
 			;;	
 
