@@ -1,1 +1,7 @@
+\chapter{Hints}
+\printhint
+
+\chapter{Solutions}
+\printsolu
+
 \end{document}
