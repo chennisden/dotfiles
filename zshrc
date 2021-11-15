@@ -115,6 +115,10 @@ create-mdx-app(){
 }
 
 # TeX Live stuff
+export PATH=$HOME/.local/bin/texlive/2021/bin/x86_64-linux:$PA
+TH
+export INFOPATH=$HOME/.local/bin/texlive/2021/texmf-dist/doc/i
+nfo:$INFOPATH
 export MANPATH=$HOME/.local/texlive/2021/texmf-dist/doc/man:$MANPATH
 
 # rubygems
