@@ -74,6 +74,9 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# move workspace
+bindsym $mod+q move workspace to output next
+
 # change focus
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -239,6 +242,6 @@ bar {
 	      }
 }
 exec xrandr --output DP-0 --output DP-2 --left-of DP-0
-nitrogen --restore &
+exec nitrogen --restore &
 exec dunst
 exec_always --no-startup-id picom & 
