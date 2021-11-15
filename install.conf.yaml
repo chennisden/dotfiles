@@ -16,3 +16,4 @@
     ~/.Xresources: Xresources
     ~/.config/picom.conf: picom.conf
     ~/.config/zathura: zathura/
+    ~/.mabook-tools: mabook-tools/

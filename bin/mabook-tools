@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-DIR=${2:-$(cat $HOME/.config/mabook-tools)}	
+DIR=${2:-$(cat $HOME/.config/mabook-tools/default)}	
 arg_1=${1:-summary}
 
 list() {
@@ -15,9 +15,16 @@ case $arg_1 in
 
 			default)
 
-				echo $3 > $HOME/.config/mabook-tools
+				echo $3 > $HOME/.config/mabook-tools/default
 
 			;;
+
+			template)
+				
+				cat $3 > $HOME/.config/mabook-tools/template-start
+				cat $4 > $HOME/.config/mabook-tools/template-end
+
+			;;	
 
 			*)
 					
@@ -29,6 +36,24 @@ case $arg_1 in
 	
 	;;
 	
+	preview)
+		
+		TEMPLATE_START=${3:-$(cat $HOME/.config/mabook-tools/template-start)}
+		TEMPLATE_END=${4:-$(cat $HOME/.config/mabook-tools/template-end)}
+
+		PREVIEW_FILE=$HOME/.cache/mabook-tools/preview.tex
+
+		echo "$TEMPLATE_START" > $PREVIEW_FILE 
+		cat $DIR >> $PREVIEW_FILE
+		echo "$TEMPLATE_END" >> $PREVIEW_FILE
+
+		PWDIR=$(pwd)
+		cd $HOME/.cache/mabook-tools
+		latexmk -pdf preview.tex
+		cd $PWDIR
+
+	;;
+
 	envs)
 	
 		FORMAT="%-12s %-30s\n"	
