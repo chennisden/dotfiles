@@ -1,0 +1,15 @@
+#! /usr/bin/bash
+LATEXMK=/home/dc/.local/bin/texlive/2021/bin/x86_64-linux/latexmk
+
+[ -d build ] && mv build/* .
+
+if [ -z "$1" ]
+	then
+		$LATEXMK -pdf
+	else
+		$LATEXMK -pdf $1
+fi
+
+# hint and solu are just what I commonly use for scrambledenvs
+[ -d build ] || mkdir build
+mv *.aux *.fdb_latexmk *.fls *.log *.out *.pdf *.pre *.toc *.asy *.hint *.solu build
