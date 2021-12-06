@@ -234,4 +234,5 @@ bar {
 }
 
 exec ~/.fehbg &
+exec dropbox &
 exec dunst
