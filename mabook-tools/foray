@@ -22,3 +22,15 @@
 \date{\the\year}
 
 \begin{document}
+
+\input{content.tex}
+
+\chapter{Hints}
+
+\printhint
+
+\chapter{Solutions}
+
+\printsolu
+
+\end{document}
