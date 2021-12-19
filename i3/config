@@ -33,15 +33,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Adjust brightness via xbacklight
-bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 10 && pkill -RTMIN+2 i3blocks
-bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10 && pkill -RTMIN+2 i3blocks
-
-# Use amixer to adjust volume
-bindsym XF86AudioMute exec amixer set Master toggle && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec amixer set Master 5%- && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ && pkill -RTMIN+1 i3blocks
-
 # Reset alsactl when audio goes bad
 bindsym $mod+XF86AudioMute exec alsactl restore -P
 
@@ -58,7 +49,7 @@ bindsym --release Shift+Print exec flameshot full -c
 # bindsym --release $mod+Print exec ~/.config/i3/bin/screenshot_full
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty 
 # start chrome
 bindsym $mod+c exec google-chrome
 # kill focused window
@@ -74,34 +65,22 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
+bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
-bindsym $mod+l focus left
-bindsym $mod+semicolon focus right
-
-# change focus for fullscreen windows
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+l focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+n split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+m split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -152,8 +131,8 @@ bindsym $mod+0 workspace number $ws10
 bindsym $mod+t exec picom-toggle
 
 # ma-ssh
-bindsym $mod+m exec alacritty --hold -e ma-ssh
-bindsym $mod+Shift+m exec alacritty --hold -e ma-ssh mast
+bindsym $mod+Shift+comma exec alacritty --hold -e ma-ssh
+bindsym $mod+comma exec alacritty --hold -e ma-ssh mast
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -184,16 +163,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
