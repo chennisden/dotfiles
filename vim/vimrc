@@ -13,9 +13,11 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-	Plug 'chennisden/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+	Plug 'chennisden/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }	
+	Plug 'SirVer/ultisnips'
+	Plug 'rust-lang/rust.vim'
+	" NerdTree extensions	
 	Plug 'preservim/nerdtree'
-	" NerdTree extensions
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'ryanoasis/vim-devicons'
 call plug#end()
@@ -23,3 +25,10 @@ call plug#end()
 " Auto-start NERDTREE if no arg (ie no file opened)
 " and move cursor to other window
 " autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
+syntax enable
+filetype plugin indent on
+
+" rust-lang tools
+
+let g:rustfmt_autosave = 1

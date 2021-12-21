@@ -10,7 +10,7 @@ append_path () {
         *:"$1":*)
             ;;
         *)
-            PATH="${PATH:+$PATH:}$1"
+            PATH="$1:${PATH}"
     esac
 }
 
@@ -21,7 +21,7 @@ append_path '/usr/local/bin'
 append_path '/usr/bin'
 
 # Force PATH to be environment
-export PATH
+export PATH=$HOME/bin:$PATH
 
 # Load profiles from /etc/profile.d
 if test -d /etc/profile.d/; then
@@ -49,4 +49,4 @@ unset TERMCAP
 
 # Man is much better than us at figuring this out
 unset MANPATH
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
