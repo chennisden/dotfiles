@@ -1,5 +1,4 @@
 #! /usr/bin/bash
-LATEXMK=$HOME/.local/bin/texlive/2021/bin/x86_64-linux/latexmk
 
 [ -d build ] && mv build/* .
 
@@ -11,7 +10,7 @@ if [ -z "$1" ]
 		FILE=$(basename ${1} .tex)
 fi
 
-$LATEXMK $FILE.tex
+latexmk -pdf "$@" $FILE.tex
 
 # hint and solu are just what I commonly use for scrambledenvs
 [ -d build ] || mkdir build
@@ -20,6 +19,6 @@ mv *.aux *.fdb_latexmk *.fls *.log *.out *.pdf *.pre *.toc *.asy *.hint *.solu b
 mv build/$FILE.pdf $FILE.pdf
 
 if [[ -z "$(pidof zathura ${FILE}.pdf)" && $2 -eq preview ]]
-	then
-		zathura $FILE.pdf &
+then
+	zathura $FILE.pdf &
 fi
