@@ -18,7 +18,7 @@ mv *.aux *.fdb_latexmk *.fls *.log *.out *.pdf *.pre *.toc *.asy *.hint *.solu b
 
 mv build/$FILE.pdf $FILE.pdf
 
-if [[ -z "$(pidof zathura ${FILE}.pdf)" && $2 -eq preview ]]
+if ! pgrep -f "zathura $FILE.pdf" > /dev/null
 then
 	zathura $FILE.pdf &
 fi
