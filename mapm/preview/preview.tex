@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{mapm}
+\usepackage{pgffor}
+\usepackage{asymptote}
+\usepackage{tikz}
+
+\newcommand\ansbold[1]{\mathbf{#1}}
+
+\begin{document}
+\section*{Problem (\probvar{1}{author})}
+
+\probvar{1}{problem}
+
+\ifnum\solcount{1}>0\relax
+\foreach \i in {1,...,\solcount{1}} {
+    \subsection*{Solution \i{} (\solvar{1}{\i}{author})}
+
+        \solvar{1}{\i}{text}
+    }
+\fi
+\end{document}

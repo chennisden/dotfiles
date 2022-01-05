@@ -1,0 +1,9 @@
+vars: []
+texfiles:
+  preview.tex: preview.pdf
+engine: pdflatex
+problem_count: 1 
+problemvars:
+  - problem
+solutionvars:
+  - text
