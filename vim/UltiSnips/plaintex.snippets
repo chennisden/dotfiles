@@ -1,0 +1,128 @@
+global !p
+
+def Math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+enddef
+
+def Comment(): 
+	return vim.eval('vimtex#syntax#in_comment()') == '1'
+enddef
+
+def Env(name):
+	[x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
+	return x != '0' and y != '0'
+enddef
+
+endglobal
+
+# general
+
+snippet beg "begin{} / end{}" bA
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+snippet doc
+\begin{document}
+		
+\maketitle
+
+$0
+
+\end{document}
+endsnippet
+
+snippet enu
+\begin{enumerate}
+	$0
+\end{enumerate}
+endsnippet
+
+snippet it
+\begin{it}
+	$0
+\end{it}
+endsnippet
+
+# mast
+
+snippet defi
+\begin{defi}
+	$0
+\end{defi}
+endsnippet
+
+snippet theo
+\begin{theo}
+	$0
+\end{theo}
+endsnippet
+
+snippet pro
+\begin{pro}
+	$0
+\end{pro}
+endsnippet
+
+snippet exam
+\begin{exam}
+	$0
+\end{exam}
+endsnippet
+
+snippet exer
+\begin{exer}
+	$0
+\end{exer}
+endsnippet
+
+snippet walk
+\begin{walk}
+	$0
+\end{walk}
+endsnippet
+
+snippet sol
+\begin{sol}
+	$0
+\end{sol}
+endsnippet
+
+snippet prob
+\begin{prob}
+	$0
+\end{prob}
+endsnippet
+
+snippet solu
+\begin{solu}
+	$0
+\end{solu}
+endsnippet
+
+# usamts
+
+snippet usamts
+\lhead{Dennis Chen, 35775}
+\rhead{Year $1, Round $2}
+\pagestyle{fancy}
+
+\newcounter{problem}
+\def\problem{\stepcounter{problem}\section{Problem \theproblem}}
+
+\begin{document}
+
+\problem
+
+\problem
+
+\problem
+
+\problem
+
+\problem
+
+\end{document}
+
+endsnippet

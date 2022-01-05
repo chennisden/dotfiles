@@ -4,6 +4,10 @@ set shiftwidth=2
 set nu
 set rnu
 
+" general config
+
+set pastetoggle=<F3>
+
 " Vim-plug
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -13,8 +17,14 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+	Plug 'sirver/ultisnips'
 	Plug 'chennisden/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }	
 	Plug 'SirVer/ultisnips'
+	Plug 'honza/vim-snippets'
+		let g:UltiSnipsExpandTrigger = '<tab>'
+		let g:UltiSnipsJumpForwardTrigger = '<tab>'
+		let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+		let g:UltiSnipsEditSplit="vertical"
 	Plug 'rust-lang/rust.vim'
 	" NerdTree extensions	
 	Plug 'preservim/nerdtree'
